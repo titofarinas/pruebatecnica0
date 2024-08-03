@@ -60,9 +60,9 @@ go
 
 INSERT INTO Cliente (numero_identificacion, tipo_identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, direccion_id, estado)
 VALUES
-('123456789', 'Cédula', 'Juan', 'Carlos', 'Pérez', 'Gómez', 1, 1),
-('987654321', 'Cédula', 'María', 'Elena', 'Rodríguez', 'López', 2, 1),
-('456123789', 'Pasaporte', 'Luis', 'Fernando', 'Martínez', 'Ruiz', 3, 1);
+('123456789', 'Cï¿½dula', 'Juan', 'Carlos', 'Pï¿½rez', 'Gï¿½mez', 1, 1),
+('987654321', 'Cï¿½dula', 'Marï¿½a', 'Elena', 'Rodrï¿½guez', 'Lï¿½pez', 2, 1),
+('456123789', 'Pasaporte', 'Luis', 'Fernando', 'Martï¿½nez', 'Ruiz', 3, 1);
 
 
 go
@@ -72,3 +72,4 @@ VALUES
 ('Hipotecario', 1, '2024-01-01', '2029-01-01', 100000.00, 'USD', 95000.00, 60, 1),
 ('Personal', 2, '2023-06-15', '2024-06-15', 5000.00, 'USD', 4500.00, 12, 1),
 ('Automotriz', 3, '2022-09-01', '2026-09-01', 20000.00, 'USD', 19000.00, 48, 1);
+('Personal', 1, '2024-01-01', '2024-12-01', 25000.00, 'USD', 20000.00, 12, 0);
