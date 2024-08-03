@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:62598/CustomerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService.Model" />
+  <xs:import schemaLocation="http://localhost:62598/CustomerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfService.DTOs" />
+  <xs:element name="GetClientesActivos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientesActivosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetClientesActivosResult" nillable="true" type="q1:ArrayOfCliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="InsertCliente">
     <xs:complexType>
       <xs:sequence>
@@ -32,7 +45,7 @@
   <xs:element name="GetClienteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetClienteResult" nillable="true" type="q1:Cliente" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfService.DTOs" minOccurs="0" name="GetClienteResult" nillable="true" type="q2:CustomerDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -46,7 +59,8 @@
         <xs:element minOccurs="0" name="segundoNombre" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="primerApellido" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="segundoApellido" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="direccionId" type="xs:int" />
+        <xs:element minOccurs="0" name="direccion_id" type="xs:int" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="estado" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>

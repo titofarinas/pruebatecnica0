@@ -76,6 +76,7 @@
     <Compile Include="CustomerService.svc.cs">
       <DependentUpon>CustomerService.svc</DependentUpon>
     </Compile>
+    <Compile Include="DTOs\CustomerDTO.cs" />
     <Compile Include="Services\Contracts\ICustomerService.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\dbtest.cs" />

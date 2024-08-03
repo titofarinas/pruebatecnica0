@@ -76,8 +76,9 @@ CREATE PROCEDURE sp_GetCliente
     @cliente_id INT
 AS
 BEGIN
-    SELECT * 
-    FROM Cliente
+    SELECT c.*, d.descripcion as direccion 
+    FROM Cliente c
+    INNER JOIN Direccion d on c.direccion_id = d.direccion_id
     WHERE cliente_id = @cliente_id;
 END;
 
@@ -119,6 +120,19 @@ END;
 
 go
 
+CREATE PROCEDURE sp_GetClientesActivos
+AS
+BEGIN    
+    SELECT 
+        *
+    FROM 
+        Cliente
+    WHERE 
+        estado = 1; 
+
+END
+
+go
 
 ---  Prestamo ---
 

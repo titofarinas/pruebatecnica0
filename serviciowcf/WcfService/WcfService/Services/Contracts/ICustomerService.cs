@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WcfService.DTOs;
+using WcfService.Model;
 
 namespace WcfService
 {
@@ -12,11 +14,14 @@ namespace WcfService
     public interface ICustomerService
     {
         [OperationContract]
+        List<Cliente> GetClientesActivos();
+
+        [OperationContract]
         int InsertCliente(string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string direccion, bool estado);
         [OperationContract]
-        Model.Cliente GetCliente(int clienteId);
+        CustomerDTO GetCliente(int clienteId);
         [OperationContract]
-        void UpdateCliente(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccionId, bool estado);
+        void UpdateCliente(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccion_id, string direccion, bool estado);
         [OperationContract] 
         void DeleteCliente(int clienteId);
     }

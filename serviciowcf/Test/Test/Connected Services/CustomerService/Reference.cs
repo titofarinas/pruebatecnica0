@@ -500,9 +500,204 @@ namespace Test.CustomerService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerDTO", Namespace="http://schemas.datacontract.org/2004/07/WcfService.DTOs")]
+    [System.SerializableAttribute()]
+    public partial class CustomerDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int cliente_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string direccionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int direccion_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> estadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string numero_identificacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string primer_apellidoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string primer_nombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string segundo_apellidoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string segundo_nombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tipo_identificacionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int cliente_id {
+            get {
+                return this.cliente_idField;
+            }
+            set {
+                if ((this.cliente_idField.Equals(value) != true)) {
+                    this.cliente_idField = value;
+                    this.RaisePropertyChanged("cliente_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string direccion {
+            get {
+                return this.direccionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.direccionField, value) != true)) {
+                    this.direccionField = value;
+                    this.RaisePropertyChanged("direccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int direccion_id {
+            get {
+                return this.direccion_idField;
+            }
+            set {
+                if ((this.direccion_idField.Equals(value) != true)) {
+                    this.direccion_idField = value;
+                    this.RaisePropertyChanged("direccion_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> estado {
+            get {
+                return this.estadoField;
+            }
+            set {
+                if ((this.estadoField.Equals(value) != true)) {
+                    this.estadoField = value;
+                    this.RaisePropertyChanged("estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string numero_identificacion {
+            get {
+                return this.numero_identificacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.numero_identificacionField, value) != true)) {
+                    this.numero_identificacionField = value;
+                    this.RaisePropertyChanged("numero_identificacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string primer_apellido {
+            get {
+                return this.primer_apellidoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.primer_apellidoField, value) != true)) {
+                    this.primer_apellidoField = value;
+                    this.RaisePropertyChanged("primer_apellido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string primer_nombre {
+            get {
+                return this.primer_nombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.primer_nombreField, value) != true)) {
+                    this.primer_nombreField = value;
+                    this.RaisePropertyChanged("primer_nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string segundo_apellido {
+            get {
+                return this.segundo_apellidoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.segundo_apellidoField, value) != true)) {
+                    this.segundo_apellidoField = value;
+                    this.RaisePropertyChanged("segundo_apellido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string segundo_nombre {
+            get {
+                return this.segundo_nombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.segundo_nombreField, value) != true)) {
+                    this.segundo_nombreField = value;
+                    this.RaisePropertyChanged("segundo_nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tipo_identificacion {
+            get {
+                return this.tipo_identificacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tipo_identificacionField, value) != true)) {
+                    this.tipo_identificacionField = value;
+                    this.RaisePropertyChanged("tipo_identificacion");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CustomerService.ICustomerService")]
     public interface ICustomerService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetClientesActivos", ReplyAction="http://tempuri.org/ICustomerService/GetClientesActivosResponse")]
+        Test.CustomerService.Cliente[] GetClientesActivos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetClientesActivos", ReplyAction="http://tempuri.org/ICustomerService/GetClientesActivosResponse")]
+        System.Threading.Tasks.Task<Test.CustomerService.Cliente[]> GetClientesActivosAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/InsertCliente", ReplyAction="http://tempuri.org/ICustomerService/InsertClienteResponse")]
         int InsertCliente(string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string direccion, bool estado);
@@ -511,16 +706,16 @@ namespace Test.CustomerService {
         System.Threading.Tasks.Task<int> InsertClienteAsync(string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string direccion, bool estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCliente", ReplyAction="http://tempuri.org/ICustomerService/GetClienteResponse")]
-        Test.CustomerService.Cliente GetCliente(int clienteId);
+        Test.CustomerService.CustomerDTO GetCliente(int clienteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCliente", ReplyAction="http://tempuri.org/ICustomerService/GetClienteResponse")]
-        System.Threading.Tasks.Task<Test.CustomerService.Cliente> GetClienteAsync(int clienteId);
+        System.Threading.Tasks.Task<Test.CustomerService.CustomerDTO> GetClienteAsync(int clienteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/UpdateCliente", ReplyAction="http://tempuri.org/ICustomerService/UpdateClienteResponse")]
-        void UpdateCliente(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccionId, bool estado);
+        void UpdateCliente(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccion_id, string direccion, bool estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/UpdateCliente", ReplyAction="http://tempuri.org/ICustomerService/UpdateClienteResponse")]
-        System.Threading.Tasks.Task UpdateClienteAsync(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccionId, bool estado);
+        System.Threading.Tasks.Task UpdateClienteAsync(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccion_id, string direccion, bool estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeleteCliente", ReplyAction="http://tempuri.org/ICustomerService/DeleteClienteResponse")]
         void DeleteCliente(int clienteId);
@@ -556,6 +751,14 @@ namespace Test.CustomerService {
                 base(binding, remoteAddress) {
         }
         
+        public Test.CustomerService.Cliente[] GetClientesActivos() {
+            return base.Channel.GetClientesActivos();
+        }
+        
+        public System.Threading.Tasks.Task<Test.CustomerService.Cliente[]> GetClientesActivosAsync() {
+            return base.Channel.GetClientesActivosAsync();
+        }
+        
         public int InsertCliente(string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string direccion, bool estado) {
             return base.Channel.InsertCliente(numeroIdentificacion, tipoIdentificacion, primerNombre, segundoNombre, primerApellido, segundoApellido, direccion, estado);
         }
@@ -564,20 +767,20 @@ namespace Test.CustomerService {
             return base.Channel.InsertClienteAsync(numeroIdentificacion, tipoIdentificacion, primerNombre, segundoNombre, primerApellido, segundoApellido, direccion, estado);
         }
         
-        public Test.CustomerService.Cliente GetCliente(int clienteId) {
+        public Test.CustomerService.CustomerDTO GetCliente(int clienteId) {
             return base.Channel.GetCliente(clienteId);
         }
         
-        public System.Threading.Tasks.Task<Test.CustomerService.Cliente> GetClienteAsync(int clienteId) {
+        public System.Threading.Tasks.Task<Test.CustomerService.CustomerDTO> GetClienteAsync(int clienteId) {
             return base.Channel.GetClienteAsync(clienteId);
         }
         
-        public void UpdateCliente(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccionId, bool estado) {
-            base.Channel.UpdateCliente(clienteId, numeroIdentificacion, tipoIdentificacion, primerNombre, segundoNombre, primerApellido, segundoApellido, direccionId, estado);
+        public void UpdateCliente(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccion_id, string direccion, bool estado) {
+            base.Channel.UpdateCliente(clienteId, numeroIdentificacion, tipoIdentificacion, primerNombre, segundoNombre, primerApellido, segundoApellido, direccion_id, direccion, estado);
         }
         
-        public System.Threading.Tasks.Task UpdateClienteAsync(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccionId, bool estado) {
-            return base.Channel.UpdateClienteAsync(clienteId, numeroIdentificacion, tipoIdentificacion, primerNombre, segundoNombre, primerApellido, segundoApellido, direccionId, estado);
+        public System.Threading.Tasks.Task UpdateClienteAsync(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccion_id, string direccion, bool estado) {
+            return base.Channel.UpdateClienteAsync(clienteId, numeroIdentificacion, tipoIdentificacion, primerNombre, segundoNombre, primerApellido, segundoApellido, direccion_id, direccion, estado);
         }
         
         public void DeleteCliente(int clienteId) {

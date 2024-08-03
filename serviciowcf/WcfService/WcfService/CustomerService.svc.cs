@@ -8,6 +8,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using WcfService.Model;
+using WcfService.DTOs;
 
 namespace WcfService
 {
@@ -21,9 +22,50 @@ namespace WcfService
         {
             _connectionString = ConfigurationManager.ConnectionStrings["dbtest"].ConnectionString;
         }
-      
 
-        public Model.Cliente GetCliente(int clienteId)
+
+        public List<Cliente> GetClientesActivos()
+        {
+            List<Cliente> clientesActivos = new List<Cliente>();
+                        
+            string connectionString = ConfigurationManager.ConnectionStrings["dbtest"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("sp_GetClientesActivos", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Cliente cliente = new Cliente
+                            {
+                                cliente_id = (int)reader["cliente_id"],
+                                numero_identificacion = reader["numero_identificacion"].ToString(),
+                                tipo_identificacion = reader["tipo_identificacion"].ToString(),
+                                primer_nombre = reader["primer_nombre"].ToString(),
+                                segundo_nombre = reader["segundo_nombre"].ToString(),
+                                primer_apellido = reader["primer_apellido"].ToString(),
+                                segundo_apellido = reader["segundo_apellido"].ToString(),
+                                direccion_id = (int)reader["direccion_id"],
+                                estado = (bool)reader["estado"]
+                            };
+
+                            clientesActivos.Add(cliente);
+                        }
+                    }
+                }
+            }
+
+            return clientesActivos;
+        }
+
+
+
+        public CustomerDTO GetCliente(int clienteId)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
@@ -37,7 +79,7 @@ namespace WcfService
                     {
                         if (reader.Read())
                         {
-                            return new Model.Cliente
+                            return new CustomerDTO
                             {
                                 cliente_id = (int)reader["cliente_id"],
                                 numero_identificacion = reader["numero_identificacion"].ToString(),
@@ -45,8 +87,9 @@ namespace WcfService
                                 primer_nombre = reader["primer_nombre"].ToString(),
                                 segundo_nombre = reader["segundo_nombre"].ToString(),
                                 primer_apellido = reader["primer_apellido"].ToString(),
-                                segundo_apellido = reader["segundo_apellido"].ToString(),
+                                segundo_apellido = reader["segundo_apellido"].ToString(),                                
                                 direccion_id = (int)reader["direccion_id"],
+                                direccion = reader["direccion"].ToString(),
                                 estado = (bool)reader["estado"]
                             };
                         }
@@ -91,10 +134,28 @@ namespace WcfService
             }
         }
 
-        public void UpdateCliente(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccionId, bool estado)
+        public void UpdateCliente(int clienteId, string numeroIdentificacion, string tipoIdentificacion, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, int direccion_id, string direccion, bool estado)
         {
+            
+
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
+                connection.Open();
+                if (estado == true)
+                {
+                    using (SqlCommand command = new SqlCommand("sp_InsertDireccion", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@descripcion", direccion);
+
+                       
+                        direccion_id = Convert.ToInt32(command.ExecuteScalar());
+                    }
+
+                }
+                                
+
                 using (SqlCommand command = new SqlCommand("sp_UpdateCliente", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
@@ -106,10 +167,10 @@ namespace WcfService
                     command.Parameters.AddWithValue("@segundo_nombre", segundoNombre);
                     command.Parameters.AddWithValue("@primer_apellido", primerApellido);
                     command.Parameters.AddWithValue("@segundo_apellido", segundoApellido);
-                    command.Parameters.AddWithValue("@direccion_id", direccionId);
-                    command.Parameters.AddWithValue("@estado", estado);
+                    command.Parameters.AddWithValue("@direccion_id", direccion_id);
+                    command.Parameters.AddWithValue("@estado", true);
 
-                    connection.Open();
+                    
                     command.ExecuteNonQuery();
                 }
             }

@@ -5,8 +5,15 @@
       <xsd:import schemaLocation="http://localhost:62598/CustomerService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:62598/CustomerService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:62598/CustomerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService.Model" />
+      <xsd:import schemaLocation="http://localhost:62598/CustomerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfService.DTOs" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="ICustomerService_GetClientesActivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientesActivos" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_GetClientesActivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientesActivosResponse" />
+  </wsdl:message>
   <wsdl:message name="ICustomerService_InsertCliente_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCliente" />
   </wsdl:message>
@@ -32,6 +39,10 @@
     <wsdl:part name="parameters" element="tns:DeleteClienteResponse" />
   </wsdl:message>
   <wsdl:portType name="ICustomerService">
+    <wsdl:operation name="GetClientesActivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetClientesActivos" message="tns:ICustomerService_GetClientesActivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/GetClientesActivosResponse" message="tns:ICustomerService_GetClientesActivos_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="InsertCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/InsertCliente" message="tns:ICustomerService_InsertCliente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/InsertClienteResponse" message="tns:ICustomerService_InsertCliente_OutputMessage" />
@@ -51,6 +62,15 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICustomerService" type="tns:ICustomerService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClientesActivos">
+      <soap:operation soapAction="http://tempuri.org/ICustomerService/GetClientesActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertCliente">
       <soap:operation soapAction="http://tempuri.org/ICustomerService/InsertCliente" style="document" />
       <wsdl:input>
