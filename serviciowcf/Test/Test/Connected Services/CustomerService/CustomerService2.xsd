@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Cliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="tns:Direccion" />
+      <xs:element minOccurs="0" name="Prestamo" nillable="true" type="tns:ArrayOfPrestamo" />
+      <xs:element minOccurs="0" name="cliente_id" type="xs:int" />
+      <xs:element minOccurs="0" name="direccion_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="numero_identificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="primer_apellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="primer_nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="segundo_apellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="segundo_nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo_identificacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:complexType name="Direccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="tns:ArrayOfCliente" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion_id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Direccion" nillable="true" type="tns:Direccion" />
+  <xs:complexType name="ArrayOfCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cliente" nillable="true" type="tns:Cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCliente" nillable="true" type="tns:ArrayOfCliente" />
+  <xs:complexType name="ArrayOfPrestamo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Prestamo" nillable="true" type="tns:Prestamo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrestamo" nillable="true" type="tns:ArrayOfPrestamo" />
+  <xs:complexType name="Prestamo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="tns:Cliente" />
+      <xs:element minOccurs="0" name="cliente_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fecha_fin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecha_inicio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monto_aprobado" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="monto_solicitado" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="plazo_financiado" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="prestamo_id" type="xs:int" />
+      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Prestamo" nillable="true" type="tns:Prestamo" />
+</xs:schema>
