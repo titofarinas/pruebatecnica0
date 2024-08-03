@@ -87,9 +87,12 @@
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ClienteService.cs" />
     <Compile Include="Services\Contracts\IClienteService.cs" />
     <Compile Include="Services\Contracts\IDireccionService.cs" />
-    <Compile Include="Services\Contracts\IPrestamo.cs" />
+    <Compile Include="Services\Contracts\IPrestamoService.cs" />
+    <Compile Include="Services\DireccionService.cs" />
+    <Compile Include="Services\PrestamoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

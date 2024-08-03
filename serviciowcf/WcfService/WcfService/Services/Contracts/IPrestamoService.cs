@@ -7,7 +7,7 @@ using WcfService.Model;
 
 namespace WcfService.Services.Contracts
 {
-    public interface IPrestamo
+    public interface IPrestamoService
     {
         List<Prestamo> GetAll();
         bool Insert();
