@@ -29,7 +29,7 @@ Determinar el nivel de conocimiento básico sobre transact-sql, webservices y fr
 - ✅ En Visual Studio, cree un proyecto de tipo ASP.NET (Framework) de nombre “Test”
 - ✅ Desarrolle frontend funcional para captura y modificación de datos de Clientes haciendo uso del WCF elaborado en el _entregable 2_
 
-MOP
+# MOP
 
 - Ejecutar archivo **create_db_tables.sql** que se encuentra en carpeta Entregable1
 - Ejecutar archivo **create_sp.sql que se** encuentra en carpeta Entregable1
