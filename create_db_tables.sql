@@ -60,9 +60,9 @@ go
 
 INSERT INTO Cliente (numero_identificacion, tipo_identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, direccion_id, estado)
 VALUES
-('123456789', 'C�dula', 'Juan', 'Carlos', 'P�rez', 'G�mez', 1, 1),
-('987654321', 'C�dula', 'Mar�a', 'Elena', 'Rodr�guez', 'L�pez', 2, 1),
-('456123789', 'Pasaporte', 'Luis', 'Fernando', 'Mart�nez', 'Ruiz', 3, 1);
+('123456789', 'Cedula', 'Juan', 'Carlos', 'Perez', 'Gomez', 1, 1),
+('987654321', 'Cedula', 'Maria', 'Elena', 'Rodroguez', 'Lopez', 2, 1),
+('456123789', 'Pasaporte', 'Luis', 'Fernando', 'Martinez', 'Ruiz', 3, 1);
 
 
 go
