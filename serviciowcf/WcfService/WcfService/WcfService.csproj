@@ -70,29 +70,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cliente.svc" />
-    <Content Include="Service1.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.svc.cs">
       <DependentUpon>Cliente.svc</DependentUpon>
     </Compile>
-    <Compile Include="ICliente.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\dbtest.cs" />
     <Compile Include="Model\Direccion.cs" />
     <Compile Include="Model\Prestamo.cs" />
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
-    </Compile>
-    <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ClienteService.cs" />
     <Compile Include="Services\Contracts\IClienteService.cs" />
-    <Compile Include="Services\Contracts\IDireccionService.cs" />
-    <Compile Include="Services\Contracts\IPrestamoService.cs" />
-    <Compile Include="Services\DireccionService.cs" />
-    <Compile Include="Services\PrestamoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
